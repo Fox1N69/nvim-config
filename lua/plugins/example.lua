@@ -87,7 +87,7 @@ return {
             ---@type lspconfig.options
             servers = {
                 -- tsserver will be automatically installed with mason and loaded with lspconfig
-                tsserver = {},
+                esserver = {},
                 gopls = {
                     settings = {
                         gopls = {
@@ -165,6 +165,18 @@ return {
                 "gosum",
                 "gowork",
             },
+        },
+    },
+
+    {
+        "simondrake/gomodifytags",
+        dependencies = { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+        opts = {
+            transformation = "camelcase",
+            skip_unexported = true,
+            override = true,
+            options = { "json=omitempty" },
+            parse = { enabled = true, seperator = "--" },
         },
     },
 
