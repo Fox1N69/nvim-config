@@ -5,5 +5,9 @@ return {
             winbar = true,
             statusline = false,
         },
+        window = {
+            position = "left",
+            width = 30,
+        },
     },
 }
