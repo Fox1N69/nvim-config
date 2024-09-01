@@ -9,6 +9,9 @@ return {
             vim.cmd([[colorscheme catppuccin-mocha]])
         end,
         opts = {
+            styles = {
+                comment = { "italic" },
+            },
             integrations = {
                 aerial = true,
                 alpha = true,
@@ -25,7 +28,7 @@ return {
                 markdown = true,
                 mini = true,
                 native_lsp = {
-                    enabled = true,
+                    enaaled = true,
                     underlines = {
                         errors = { "undercurl" },
                         hints = { "undercurl" },

@@ -59,6 +59,7 @@ return {
 
             local cmp = require("cmp")
 
+            vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#1e1e2e" })
             opts.window = {
                 completion = {
                     border = "rounded", -- Можно использовать "none", "rounded" или другие стили
