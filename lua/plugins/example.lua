@@ -88,18 +88,51 @@ return {
             servers = {
                 -- tsserver will be automatically installed with mason and loaded with lspconfig
                 tsserver = {},
+                gopls = {
+                    settings = {
+                        gopls = {
+                            hints = {
+                                assignVariableTypes = false,
+                                compositeLiteralFields = false,
+                                compositeLiteralTypes = false,
+                                constantValues = false,
+                                functionTypeParameters = false,
+                                parameterNames = false,
+                                rangeVariableTypes = false,
+                            },
+                        },
+                    },
+                },
             },
             -- you can do any additional lsp server setup here
             -- return true if you don't want this server to be setup with lspconfig
             ---@type table<string, fun(server:string, opts:_.lspconfig.options):boolean?>
             setup = {
+                gopls = function(_, opts)
+                    -- workaround for gopls not supporting semanticTokensProvider
+                    -- https://github.com/golang/go/issues/54531#issuecomment-1464982242
+                    LazyVim.lsp.on_attach(function(client, _)
+                        if not client.server_capabilities.semanticTokensProvider then
+                            local semantic = client.config.capabilities.textDocument.semanticTokens
+                            client.server_capabilities.semanticTokensProvider = {
+                                full = true,
+                                legend = {
+                                    tokenTypes = semantic.tokenTypes,
+                                    tokenModifiers = semantic.tokenModifiers,
+                                },
+                                range = true,
+                            }
+                        end
+                    end, "gopls")
+                    -- end workaround
+                end,
                 -- example to setup with typescript.nvim
                 tsserver = function(_, opts)
                     require("typescript").setup({ server = opts })
                     return true
                 end,
                 -- Specify * to use this function as a fallback for any server
-                -- ["*"] = function(server, opts) end,
+                --["*"] = function(server, opts) end,
             },
         },
     },
@@ -127,6 +160,10 @@ return {
                 "typescript",
                 "vim",
                 "yaml",
+                "go",
+                "gomod",
+                "gosum",
+                "gowork",
             },
         },
     },

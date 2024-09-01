@@ -3,8 +3,11 @@ return {
     {
         "catppuccin/nvim",
         lazy = true,
-        name = "catppuccin-mocha",
-
+        name = "catppuccin",
+        priority = 1000,
+        config = function()
+            vim.cmd([[colorscheme catppuccin-mocha]])
+        end,
         opts = {
             integrations = {
                 aerial = true,
@@ -44,7 +47,6 @@ return {
         },
     },
 
-    -- Configure LazyVim to load gruvbox
     {
         "LazyVim/LazyVim",
         opts = {
