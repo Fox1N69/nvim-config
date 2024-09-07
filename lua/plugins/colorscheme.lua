@@ -11,6 +11,17 @@ return {
         opts = {
             styles = {
                 comment = { "italic" },
+                conditionals = { "bold" },
+                loops = { "bold" },
+                functions = { "bold" },
+                operator = { "bold" },
+                keywords = {},
+                strings = {},
+                variables = {},
+                numbers = {},
+                booleans = { "bold", "italic" },
+                properties = {},
+                types = {},
             },
             integrations = {
                 aerial = true,
@@ -42,7 +53,9 @@ return {
                 noice = true,
                 notify = true,
                 semantic_tokens = true,
-                telescope = true,
+                telescope = {
+                    enabled = true,
+                },
                 treesitter = true,
                 treesitter_context = true,
                 which_key = true,

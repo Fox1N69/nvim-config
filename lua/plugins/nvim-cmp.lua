@@ -93,7 +93,7 @@ return {
             opts.window = {
                 completion = {
                     border = "rounded", -- Можно использовать "none", "rounded" или другие стили
-                    winhighlight = "Normal:NormalFloat, CursorLine:PmenuSel", -- Поменяйте на нужное состояние
+                    winhighlight = "Normal:NormalFloat", -- Поменяйте на нужное состояние
                     col_offset = 0,
                     side_padding = 1,
                 },

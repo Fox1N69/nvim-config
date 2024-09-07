@@ -3,7 +3,6 @@
 if true then return {} end
 
 -- every spec file under the "plugins" directory will be loaded automatically by lazy.nvim
---
 -- In your plugin files, you can:
 -- * add extra plugins
 -- * disable/enabled LazyVim plugins
@@ -69,7 +68,6 @@ return {
         },
     },
 
-    -- add tsserver and setup with typescript.nvim instead of lspconfig
     {
         "neovim/nvim-lspconfig",
         dependencies = {
@@ -140,37 +138,6 @@ return {
     -- for typescript, LazyVim also includes extra specs to properly setup lspconfig,
     -- treesitter, mason and typescript.nvim. So instead of the above, you can use:
     { import = "lazyvim.plugins.extras.lang.typescript" },
-
-    -- add more treesitter parsers
-    {
-        "nvim-treesitter/nvim-treesitter",
-        opts = {
-            ensure_installed = {
-                "bash",
-                "html",
-                "javascript",
-                "json",
-                "lua",
-                "markdown",
-                "markdown_inline",
-                "python",
-                "query",
-                "regex",
-                "tsx",
-                "typescript",
-                "vim",
-                "yaml",
-                "go",
-                "gomod",
-                "gosum",
-                "gowork",
-            },
-            highlight = {
-                enable = true,
-                additional_vim_regex_highlighting = false,
-            },
-        },
-    },
 
     {
         "simondrake/gomodifytags",
