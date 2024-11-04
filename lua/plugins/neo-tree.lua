@@ -20,5 +20,11 @@ return {
                 hide_gitignored = true, -- Скрывать игнорируемые Git файлы
             },
         },
+        default_component_configs = {
+            icon = {
+                folder_closed = "",
+                folder_open = "",
+            },
+        },
     },
 }

@@ -2,6 +2,23 @@ return {
     "neovim/nvim-lspconfig",
     opts = {
         servers = {
+            rust_analyzer = {
+                settings = {
+                    ["rust-analyzer"] = {
+                        assist = {
+                            importMergeBehavior = "last",
+                            importPrefix = "by_self",
+                        },
+                        diagnostics = {
+                            utimate = false, -- Отключение утилитарных подсказок
+                            enable = false,
+                        },
+                        hints = {
+                            enable = false, -- Отключение подсказок
+                        },
+                    },
+                },
+            },
             gopls = {
                 settings = {
                     gopls = {
@@ -59,6 +76,9 @@ return {
                     end
                 end, "gopls")
                 -- end workaround
+            end,
+            rust_analyzer = function(_, opts)
+                -- Установка дополнительных конфигураций для rust-analyzer, если нужно
             end,
         },
     },
