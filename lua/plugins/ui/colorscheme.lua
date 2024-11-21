@@ -9,6 +9,7 @@ return {
             vim.cmd([[colorscheme catppuccin-mocha]])
         end,
         opts = {
+            term_colors = true,
             styles = {
                 comment = { "italic" },
                 conditionals = { "bold" },
@@ -49,7 +50,11 @@ return {
                 },
                 navic = { enabled = true, custom_bg = "lualine" },
                 neotest = true,
-                neotree = true,
+                neotree = {
+                    enabled = true,
+                    show_root = true,
+                    transparent_panel = false,
+                },
                 noice = true,
                 notify = true,
                 semantic_tokens = true,
@@ -59,6 +64,7 @@ return {
                 treesitter = true,
                 treesitter_context = true,
                 which_key = true,
+                ts_rainbow = true,
             },
         },
     },

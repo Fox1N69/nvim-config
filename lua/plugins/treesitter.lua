@@ -2,6 +2,7 @@ return {
     -- Настройка nvim-treesitter
     {
         "nvim-treesitter/nvim-treesitter",
+        -- dependencies = { "p00f/nvim-ts-rainbow" },
         opts = {
             ensure_installed = {
                 "bash",
@@ -30,8 +31,11 @@ return {
                 enable = true,
                 additional_vim_regex_highlighting = false,
             },
+            rainbow = {
+                enable = true,
+                extended_mode = true,
+                max_file_lines = nil,
+            },
         },
     },
-
-    -- Подключение nvim-ts-rainbow2
 }
