@@ -31,6 +31,7 @@ require("lazy").setup({
         { import = "plugins" },
         { import = "plugins/render" },
         { import = "plugins/ui" },
+        { import = "plugins/coding" },
     },
 
     ui = {

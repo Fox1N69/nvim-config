@@ -55,6 +55,7 @@ return {
                     show_root = true,
                     transparent_panel = false,
                 },
+                blink_cmp = true,
                 noice = true,
                 notify = true,
                 semantic_tokens = true,
