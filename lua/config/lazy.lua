@@ -17,39 +17,30 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
     spec = {
-        -- add LazyVim and import its plugins
         { "LazyVim/LazyVim", import = "lazyvim.plugins" },
-        -- import any extras modules here
-        --{ import = "lazyvim.plugins.extras.lang.typescript" },
-        --{ import = "lazyvim.plugins.extras.lang.json" },
-        --{ import = "lazyvim.plugins.extras.ui.mini-animate" },
-        --{ import = "lazyvim.plugins.extras.ai.codeium" },
-        --{ import = "lazyvim.plugins.extras.lang.go" },
-        --{ import = "lazyvim.plugins.extras.ui.mini-starter" },
-        --{ import = "lazyvim.plugins.extras.ui.alpha" },
-        -- import/override with your plugins
         { import = "plugins" },
         { import = "plugins/render" },
         { import = "plugins/ui" },
         { import = "plugins/coding" },
     },
-
     ui = {
-        border = "solid",
+        border = "rounded",
+        title = "lazy.nvim",
         size = { width = 0.9, height = 0.9 },
     },
     defaults = {
-        -- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.
-        -- If you know what you're doing, you can set this to `true` to have all your custom plugins lazy-loaded by default.
-        lazy = false,
-        -- It's recommended to leave version=false for now, since a lot the plugin that support versioning,
-        -- have outdated releases, which may break your Neovim install.
-        version = false, -- always use the latest git commit
-        -- version = "*", -- try installing the latest stable version for plugins that support semver
+        lazy = true,
     },
-    install = { colorscheme = { "tokyonight", "habamax" } },
-    checker = { enabled = true }, -- automatically check for plugin updates
+    concurrency = 4,
+    install = {
+        colorscheme = { "catppuccin" },
+    },
+    checker = { enabled = true },
     performance = {
+        cache = {
+            enabled = true,
+        },
+        reset_packpath = true,
         rtp = {
             -- disable some rtp plugins
             disabled_plugins = {

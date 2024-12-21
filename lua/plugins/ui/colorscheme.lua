@@ -1,48 +1,33 @@
 return {
-    -- add catppuccin
     {
         "catppuccin/nvim",
         lazy = true,
-        name = "catppuccin",
+        optional = true,
         priority = 1000,
-        config = function()
+        name = "catppuccin",
+        init = function()
             vim.cmd.colorscheme("catppuccin")
         end,
         opts = {
             transparent_background = true,
+            compile_path = vim.fn.stdpath("cache") .. "/catppuccin",
             compile = true,
             flavour = "mocha",
-            styles = {
-                comment = { "italic" },
-                conditionals = { "bold" },
-                loops = { "bold" },
-                functions = { "bold" },
-                operator = { "bold" },
-                keywords = {},
-                strings = {},
-                variables = {},
-                numbers = {},
-                booleans = { "bold", "italic" },
-                properties = {},
-                types = {},
-            },
             integrations = {
-                aerial = true,
-                alpha = true,
+                snacks = true,
                 cmp = true,
-                dashboard = true,
-                flash = true,
-                gitsigns = true,
-                headlines = true,
-                illuminate = true,
-                indent_blankline = { enabled = true },
-                leap = true,
-                lsp_trouble = true,
+                treesitter = true,
                 mason = true,
-                markdown = true,
-                mini = true,
+                neotree = false,
+                blink_cmp = true,
                 native_lsp = {
-                    enaaled = true,
+                    enabled = true,
+                    virtual_text = {
+                        errors = { "italic" },
+                        hints = { "italic" },
+                        warnings = { "italic" },
+                        information = { "italic" },
+                    },
                     underlines = {
                         errors = { "undercurl" },
                         hints = { "undercurl" },
@@ -50,23 +35,9 @@ return {
                         information = { "undercurl" },
                     },
                 },
-                navic = { enabled = true, custom_bg = "lualine" },
-                neotest = true,
-                neotree = {
-                    enabled = true,
-                    show_root = true,
-                    transparent_panel = false,
-                },
-                noice = true,
-                notify = true,
-                semantic_tokens = true,
-                telescope = {
+                mini = {
                     enabled = true,
                 },
-                treesitter = true,
-                treesitter_context = true,
-                which_key = true,
-                ts_rainbow = true,
             },
         },
     },

@@ -8,11 +8,11 @@ return {
     version = "v0.*",
 
     opts = {
-        appearance = {
-            highlight_ns = vim.api.nvim_create_namespace("blink.cmp"),
-            use_nvim_cmp_as_default = false,
-            nerd_font_variant = "mono",
-        },
+        -- appearance = {
+        --     highlight_ns = vim.api.nvim_create_namespace("blink.cmp"),
+        --     use_nvim_cmp_as_default = false,
+        --     nerd_font_variant = "mono",
+        -- },
         completion = {
             accept = {
                 auto_brackets = {
@@ -21,17 +21,17 @@ return {
             },
             menu = {
                 border = vim.g.border_style,
-                winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,CursorLine:CursorLine,Search:None",
                 scrollbar = false,
                 draw = {
                     padding = 0,
                     gap = 1,
                     treesitter = { "lsp" },
                 },
+                winblend = 20,
             },
             documentation = {
                 auto_show = true,
-                auto_show_delay_ms = 100,
+                auto_show_delay_ms = 200,
                 window = {
                     border = vim.g.border_style,
                 },
@@ -42,12 +42,18 @@ return {
         },
         signature = {
             enabled = true,
-            border = vim.g.border_style,
         },
         sources = {
             compat = {},
-            default = { "lsp", "path", "snippets", "buffer" },
+            default = { "lsp", "path", "snippets", "buffer", "lazydev" },
             cmdline = {},
+            providers = {
+                lazydev = {
+                    name = "LazyDev",
+                    module = "lazydev.integrations.blink",
+                    score_offset = 100,
+                },
+            },
         },
         keymap = {
             preset = "super-tab",
