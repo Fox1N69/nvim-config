@@ -6,10 +6,12 @@ return {
         name = "catppuccin",
         priority = 1000,
         config = function()
-            vim.cmd([[colorscheme catppuccin-mocha]])
+            vim.cmd.colorscheme("catppuccin")
         end,
         opts = {
-            term_colors = true,
+            transparent_background = true,
+            compile = true,
+            flavour = "mocha",
             styles = {
                 comment = { "italic" },
                 conditionals = { "bold" },
@@ -55,7 +57,6 @@ return {
                     show_root = true,
                     transparent_panel = false,
                 },
-                blink_cmp = true,
                 noice = true,
                 notify = true,
                 semantic_tokens = true,
