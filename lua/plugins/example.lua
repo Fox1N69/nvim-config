@@ -41,6 +41,8 @@ return {
         },
     },
 
+    { "echasnovski/mini.nvim", version = "*" },
+
     {
         "neovim/nvim-lspconfig",
         dependencies = {

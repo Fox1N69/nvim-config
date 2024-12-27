@@ -4,9 +4,10 @@ return {
         "nvim-lua/plenary.nvim",
         "MunifTanjim/nui.nvim",
     },
+    enabled = true,
     opts = {
         source_selector = {
-            winbar = true,
+            winbar = false,
             statusline = false,
         },
         window = {

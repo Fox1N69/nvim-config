@@ -18,7 +18,7 @@ return {
                 cmp = true,
                 treesitter = true,
                 mason = true,
-                neotree = false,
+                neotree = true,
                 blink_cmp = true,
                 native_lsp = {
                     enabled = true,

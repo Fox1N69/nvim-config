@@ -100,7 +100,8 @@ return {
                         end,
                     },
                 },
-                extensions = { "neo-tree", "lazy" },
+                --extensions = { "neo-tree", "lazy" },
+                extensions = { "lazy" },
             }
 
             -- do not add trouble symbols if aerial is enabled
