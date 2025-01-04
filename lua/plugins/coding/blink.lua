@@ -79,6 +79,7 @@ return {
             menu = {
                 border = vim.g.border_style,
                 scrollbar = false,
+
                 draw = {
                     padding = 0,
                     gap = 1,
