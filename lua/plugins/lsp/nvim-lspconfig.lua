@@ -10,12 +10,25 @@ return {
                             importPrefix = "by_self",
                         },
                         diagnostics = {
-                            utimate = false, -- Отключение утилитарных подсказок
+                            utimate = false,
                             enable = false,
                         },
                         hints = {
-                            enable = false, -- Отключение подсказок
+                            assignVariableTypes = false,
+                            compositeLiteralFields = false,
+                            compositeLiteralTypes = false,
+                            constantValues = false,
+                            functionTypeParameters = false,
+                            parameterNames = false,
+                            rangeVariableTypes = false,
                         },
+                    },
+                },
+            },
+            clangd = {
+                settings = {
+                    clangd = {
+                        tabSize = 4,
                     },
                 },
             },
@@ -54,6 +67,7 @@ return {
                         staticcheck = true,
                         directoryFilters = { "-.git", "-.vscode", "-.idea", "-.vscode-test", "-node_modules" },
                         semanticTokens = true,
+                        buildFlags = { "-tags=!wireinject" },
                     },
                 },
             },

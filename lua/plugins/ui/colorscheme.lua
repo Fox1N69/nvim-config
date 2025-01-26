@@ -11,6 +11,20 @@ return {
         opts = {
             transparent_background = true,
             compile_path = vim.fn.stdpath("cache") .. "/catppuccin",
+            styles = {
+                comments = { "italic" },
+                functions = {},
+                keywords = {},
+                operators = {},
+                conditionals = {},
+                loops = {},
+                booleans = { "italic" },
+                numbers = {},
+                types = {},
+                strings = {},
+                variables = {},
+                properties = {},
+            },
             compile = true,
             flavour = "mocha",
             integrations = {
@@ -19,7 +33,16 @@ return {
                 treesitter = true,
                 mason = true,
                 neotree = true,
+                dap = true,
+                dap_ui = true,
+                dropbar = {
+                    enabled = true,
+                    color_mode = true,
+                },
+                flash = true,
+                markdown = true,
                 blink_cmp = true,
+                notify = true,
                 native_lsp = {
                     enabled = true,
                     virtual_text = {
@@ -29,10 +52,10 @@ return {
                         information = { "italic" },
                     },
                     underlines = {
-                        errors = { "undercurl" },
-                        hints = { "undercurl" },
-                        warnings = { "undercurl" },
-                        information = { "undercurl" },
+                        errors = { "underline" },
+                        hints = { "underline" },
+                        information = { "underline" },
+                        warnings = { "underline" },
                     },
                 },
                 mini = {

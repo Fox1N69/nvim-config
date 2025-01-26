@@ -22,6 +22,7 @@ require("lazy").setup({
         { import = "plugins/render" },
         { import = "plugins/ui" },
         { import = "plugins/coding" },
+        { import = "plugins/lsp" },
     },
     ui = {
         border = "rounded",

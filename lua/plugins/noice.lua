@@ -21,6 +21,15 @@ return {
                 },
                 view = "mini",
             },
+            {
+                filter = {
+                    event = "lsp",
+                    any = {
+                        { find = "rust-analyzer" },
+                    },
+                },
+                opts = { skip = true },
+            },
         },
         presets = {
             bottom_search = true,
