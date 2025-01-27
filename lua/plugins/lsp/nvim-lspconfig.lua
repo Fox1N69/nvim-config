@@ -1,5 +1,16 @@
 return {
     "neovim/nvim-lspconfig",
+    dependencies = {
+        "jose-elias-alvarez/typescript.nvim",
+        init = function()
+            require("lazyvim.util").lsp.on_attach(function(_, buffer)
+      -- stylua: ignore
+      vim.keymap.set( "n", "<leader>co", "TypescriptOrganizeImports", { buffer = buffer, desc = "Organize Imports" })
+                vim.keymap.set("n", "<leader>cR", "TypescriptRenameFile", { desc = "Rename File", buffer = buffer })
+            end)
+        end,
+    },
+    ---@class PluginLspOpts
     opts = {
         servers = {
             rust_analyzer = {
@@ -9,18 +20,36 @@ return {
                             importMergeBehavior = "last",
                             importPrefix = "by_self",
                         },
+                        cargo = {
+                            allFeatures = true,
+                        },
                         diagnostics = {
                             utimate = false,
                             enable = false,
                         },
                         hints = {
+                            enable = false,
                             assignVariableTypes = false,
-                            compositeLiteralFields = false,
-                            compositeLiteralTypes = false,
-                            constantValues = false,
-                            functionTypeParameters = false,
-                            parameterNames = false,
-                            rangeVariableTypes = false,
+                            chainReceiverTypes = false,
+                            closureReturnTypes = false,
+                            discriminantTypes = false,
+                            expressionAdjustmentHints = {
+                                enable = false,
+                            },
+                            implicitDrops = false,
+                            parameterHints = false,
+                            rangeExclusive = false,
+                            typeHints = false,
+                        },
+                        inlayHints = {
+                            enabled = false,
+                            chainingHints = false,
+                            parameterHints = false,
+                            typeHints = false,
+                            hideNamedConstructorHints = true,
+                            maxLength = 0,
+                            hideClosureInitialization = true,
+                            renderColons = false,
                         },
                     },
                 },

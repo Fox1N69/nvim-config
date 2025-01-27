@@ -1,5 +1,11 @@
 return {
-    { "folke/snacks.nvim", opts = { dashboard = { enabled = true } } },
+    {
+        "folke/snacks.nvim",
+        opts = {
+            dashboard = { enabled = true },
+            inlay_hint = { enabled = false },
+        },
+    },
     {
         "nvimdev/dashboard-nvim",
         lazy = true, -- As https://github.com/nvimdev/dashboard-nvim/pull/450, dashboard-nvim shouldn't be lazy-loaded to properly handle stdin.
