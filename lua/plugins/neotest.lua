@@ -1,3 +1,4 @@
+local neotest = require("neotest")
 return {
     {
         "nvim-neotest/neotest",
@@ -9,11 +10,7 @@ return {
             { "fredrikaverpil/neotest-golang", version = "*" }, -- Installation
         },
         config = function()
-            require("neotest").setup({
-                adapters = {
-                    require("neotest-golang"), -- Registration
-                },
-            })
+            require("neotest").setup({})
         end,
     },
 }

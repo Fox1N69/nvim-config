@@ -7,6 +7,10 @@ return {
     },
     version = "v0.*",
     opts = {
+        appearance = {
+            use_nvim_cmp_as_default = true,
+            nerd_font_variant = "normal",
+        },
         completion = {
             accept = {
                 auto_brackets = { enabled = true },
@@ -15,8 +19,8 @@ return {
                 border = vim.g.border_style,
                 scrollbar = false,
                 draw = {
+                    columns = { { "kind_icon" }, { "label", "label_description", gap = 4 } },
                     padding = 0,
-                    gap = 1,
                     treesitter = { "lsp" },
 
                     components = {
@@ -48,7 +52,6 @@ return {
         sources = {
             compat = {},
             default = { "lsp", "path", "snippets", "buffer", "lazydev" },
-            cmdline = {},
             providers = {
                 lazydev = {
                     name = "LazyDev",
