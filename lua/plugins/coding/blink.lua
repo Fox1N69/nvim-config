@@ -24,13 +24,13 @@ return {
                     treesitter = { "lsp" },
 
                     components = {
-                        kind_icon = {
-                            ellipsis = false,
-                            text = function(ctx)
-                                local kind_icon, _, _ = require("mini.icons").get("lsp", ctx.kind)
-                                return kind_icon
-                            end,
-                        },
+                        -- kind_icon = {
+                        --     ellipsis = false,
+                        --     text = function(ctx)
+                        --         local kind_icon, _, _ = require("mini.icons").get("lsp", ctx.kind)
+                        --         return kind_icon
+                        --     end,
+                        -- },
                     },
                 },
                 winblend = 20,
