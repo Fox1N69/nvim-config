@@ -82,9 +82,14 @@ return {
             enabled = true,
         },
         sources = {
-            compat = {},
+            compat = { "supermaven" },
             default = { "lsp", "path", "snippets", "buffer", "lazydev" },
             providers = {
+                supermaven = {
+                    kind = "Supermaven",
+                    score_offset = 100,
+                    async = true,
+                },
                 lazydev = {
                     name = "LazyDev",
                     module = "lazydev.integrations.blink",
