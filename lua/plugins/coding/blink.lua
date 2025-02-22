@@ -10,16 +10,22 @@ return {
         appearance = {
             use_nvim_cmp_as_default = true,
             nerd_font_variant = "normal",
+            kind_icons = {
+                Text = "",
+            },
         },
         completion = {
             accept = {
                 auto_brackets = { enabled = true },
             },
             menu = {
-                border = vim.g.border_style,
+                border = "single",
                 scrollbar = false,
                 draw = {
-                    columns = { { "kind_icon" }, { "label", "label_description", gap = 4 } },
+                    columns = {
+                        { "kind_icon" },
+                        { "label", "label_description", gap = 4 },
+                    },
                     padding = 0,
                     treesitter = { "lsp" },
 
@@ -39,11 +45,11 @@ return {
                 auto_show = true,
                 auto_show_delay_ms = 200,
                 window = {
-                    border = vim.g.border_style,
+                    border = "single",
                 },
             },
             ghost_text = {
-                enabled = vim.g.ai_cmp,
+                enabled = true,
             },
         },
         signature = {

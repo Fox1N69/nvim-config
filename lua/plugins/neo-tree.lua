@@ -16,9 +16,9 @@ return {
         },
         filesystem = {
             filtered_items = {
-                visible = true, -- Показывать скрытые файлы
-                hide_dotfiles = false, -- Не скрывать файлы с точкой в начале
-                hide_gitignored = true, -- Скрывать игнорируемые Git файлы
+                visible = false,
+                hide_dotfiles = false,
+                hide_gitignored = true,
             },
         },
         default_component_configs = {
