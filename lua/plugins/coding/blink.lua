@@ -8,7 +8,7 @@ return {
     version = "v0.*",
     opts = {
         appearance = {
-            nerd_font_variant = "normal",
+            nerd_font_variant = "mono",
             kind_icons = {
                 Text = "",
                 Method = "",
@@ -42,7 +42,7 @@ return {
                 auto_brackets = { enabled = true },
             },
             menu = {
-                border = "single",
+                border = "rounded",
                 scrollbar = false,
                 draw = {
                     columns = {
@@ -68,7 +68,7 @@ return {
                 auto_show = true,
                 auto_show_delay_ms = 200,
                 window = {
-                    border = "single",
+                    border = "rounded",
                 },
             },
             ghost_text = {

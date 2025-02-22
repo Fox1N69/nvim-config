@@ -2,15 +2,7 @@ return {
     "neovim/nvim-lspconfig",
     dependencies = {
         "jose-elias-alvarez/typescript.nvim",
-        init = function()
-            require("lazyvim.util").lsp.on_attach(function(_, buffer)
-      -- stylua: ignore
-      vim.keymap.set( "n", "<leader>co", "TypescriptOrganizeImports", { buffer = buffer, desc = "Organize Imports" })
-                vim.keymap.set("n", "<leader>cR", "TypescriptRenameFile", { desc = "Rename File", buffer = buffer })
-            end)
-        end,
     },
-    ---@class PluginLspOpts
     opts = {
         servers = {
             rust_analyzer = {
@@ -103,8 +95,6 @@ return {
         },
         setup = {
             gopls = function(_, opts)
-                -- workaround for gopls not supporting semanticTokensProvider
-                -- https://github.com/golang/go/issues/54531#issuecomment-1464982242
                 LazyVim.lsp.on_attach(function(client, _)
                     if not client.server_capabilities.semanticTokensProvider then
                         local semantic = client.config.capabilities.textDocument.semanticTokens
@@ -118,11 +108,8 @@ return {
                         }
                     end
                 end, "gopls")
-                -- end workaround
             end,
-            rust_analyzer = function(_, opts)
-                -- Установка дополнительных конфигураций для rust-analyzer, если нужно
-            end,
+            rust_analyzer = function(_, opts) end,
         },
     },
 }

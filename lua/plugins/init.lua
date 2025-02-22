@@ -1,8 +1,10 @@
 return {
+    -- init cmp_luasnip
     {
         "saadparwaiz1/cmp_luasnip",
     },
 
+    -- init telescope plugin
     {
         "nvim-telescope/telescope.nvim",
         keys = {
@@ -14,7 +16,6 @@ return {
                 desc = "Find Plugin File",
             },
         },
-        -- change some options
         opts = {
             defaults = {
                 layout_strategy = "horizontal",
