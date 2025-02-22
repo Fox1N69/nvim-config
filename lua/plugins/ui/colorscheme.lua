@@ -26,7 +26,9 @@ return {
             integrations = {
                 snacks = true,
                 cmp = true,
-                treesitter = true,
+                treesitter = {
+                    enabled = true,
+                },
                 mason = true,
                 neotree = true,
                 dap = true,

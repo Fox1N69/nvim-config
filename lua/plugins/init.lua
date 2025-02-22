@@ -28,5 +28,12 @@ return {
 
     { "echasnovski/mini.nvim", version = "*" },
 
+    { "nvzone/volt", lazy = true },
+
+    {
+        "nvzone/minty",
+        cmd = { "Shades", "Huefy" },
+    },
+
     { import = "lazyvim.plugins.extras.lang.json" },
 }

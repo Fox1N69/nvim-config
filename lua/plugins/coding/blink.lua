@@ -35,6 +35,9 @@ return {
                 Event = "󱐋",
                 Operator = "󰪚",
                 TypeParameter = "󰬛",
+                Supermaven = "",
+                Codeium = "",
+                Package = "",
             },
         },
         completion = {
