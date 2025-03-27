@@ -106,12 +106,12 @@ return {
 
                         ["@storageclass.lifetime"] = { fg = colors.yellow },
 
-                        ["@lsp.type.class"] = { fg = colors.yellow },
-                        ["@lsp.type.decorator"] = { fg = colors.yellow },
-                        ["@lsp.type.enum"] = { fg = colors.yellow },
-                        ["@lsp.type.interface"] = { fg = colors.yellow },
-                        ["@lsp.type.macro"] = { fg = colors.blue },
-                        ["@lsp.type.variable"] = { fg = colors.text },
+                        -- ["@lsp.type.class"] = { fg = colors.yellow },
+                        -- ["@lsp.type.decorator"] = { fg = colors.yellow },
+                        -- ["@lsp.type.enum"] = { fg = colors.yellow },
+                        -- ["@lsp.type.interface"] = { fg = colors.yellow },
+                        -- ["@lsp.type.macro"] = { fg = colors.blue },
+                        -- ["@lsp.type.variable"] = { fg = colors.text },
                     }
                 end,
             },

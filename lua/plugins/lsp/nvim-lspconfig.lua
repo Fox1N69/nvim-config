@@ -88,28 +88,11 @@ return {
                         staticcheck = true,
                         directoryFilters = { "-.git", "-.vscode", "-.idea", "-.vscode-test", "-node_modules" },
                         semanticTokens = true,
-                        buildFlags = { "-tags=!wireinject" },
+                        buildFlags = { "-tags=wireinject" },
                     },
                 },
             },
         },
-        setup = {
-            gopls = function(_, opts)
-                LazyVim.lsp.on_attach(function(client, _)
-                    if not client.server_capabilities.semanticTokensProvider then
-                        local semantic = client.config.capabilities.textDocument.semanticTokens
-                        client.server_capabilities.semanticTokensProvider = {
-                            full = true,
-                            legend = {
-                                tokenTypes = semantic.tokenTypes,
-                                tokenModifiers = semantic.tokenModifiers,
-                            },
-                            range = true,
-                        }
-                    end
-                end, "gopls")
-            end,
-            rust_analyzer = function(_, opts) end,
-        },
+        setup = {},
     },
 }
