@@ -1,4 +1,3 @@
-local neotest = require("neotest")
 return {
     {
         "nvim-neotest/neotest",
@@ -7,10 +6,19 @@ return {
             "nvim-lua/plenary.nvim",
             "antoinemadec/FixCursorHold.nvim",
             "nvim-treesitter/nvim-treesitter",
-            { "fredrikaverpil/neotest-golang", version = "*" }, -- Installation
         },
         config = function()
-            require("neotest").setup({})
+            require("neotest").setup({
+                adapters = {
+                    require("neotest-go")({
+                        dap = { enabled = true, port = 38697 },
+                    }),
+                },
+            })
         end,
+    },
+    {
+        "nvim-neotest/neotest-go",
+        ft = "go",
     },
 }

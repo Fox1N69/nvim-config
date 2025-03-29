@@ -1,5 +1,4 @@
 return {
-    -- Настройка nvim-treesitter
     {
         "nvim-treesitter/nvim-treesitter",
         -- dependencies = { "p00f/nvim-ts-rainbow" },
@@ -24,9 +23,9 @@ return {
                 "gosum",
                 "gowork",
             },
-            sync_install = false, -- Параметр для синхронной установки
-            ignore_install = {}, -- Массив языков, которые не нужно устанавливать
-            auto_install = true, -- Автоустановка языковых парсеров для файлов
+            sync_install = false,
+            ignore_install = {},
+            auto_install = true,
             highlight = {
                 enable = true,
                 additional_vim_regex_highlighting = false,

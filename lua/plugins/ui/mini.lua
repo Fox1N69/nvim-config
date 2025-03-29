@@ -6,7 +6,6 @@ local my_prefix = function(fs_entry)
         return icon .. " ", hl
     end
 
-    -- Try falling back to 'nvim-web-devicons'
     if fs_entry.fs_type == "directory" then
         return " ", "MiniFilesDirectory"
     end
@@ -23,7 +22,7 @@ require("mini.files").setup({ content = { prefix = my_prefix } })
 
 return {
     {
-        "echasnovski/mini.files", -- Плагин для работы с файловым менеджером
+        "echasnovski/mini.files",
         version = false,
         config = function()
             require("mini.files").setup({

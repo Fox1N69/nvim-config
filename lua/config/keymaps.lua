@@ -5,4 +5,6 @@
 local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 
-vim.api.nvim_set_keymap("n", "<Space><Tab>g", ":lua create_group()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<Space><Tab>g", ":lua create_group()<CR>", opts)
+vim.api.nvim_set_keymap("n", "<leader>cta", ":GoTagAdd<CR>", opts)
+vim.api.nvim_set_keymap("n", "<leader>ctd", ":GoTagClear<CR>", opts)
