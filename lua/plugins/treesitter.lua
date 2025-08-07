@@ -22,6 +22,7 @@ return {
                 "gomod",
                 "gosum",
                 "gowork",
+                "astro",
             },
             sync_install = false,
             ignore_install = {},

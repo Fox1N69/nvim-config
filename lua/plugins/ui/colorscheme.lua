@@ -90,9 +90,10 @@ return {
                     surface0 = "#383747",
 
                     -- Основные цвета фона
-                    base = "#1E1D2D",
-                    mantle = "#191828",
-                    crust = "#11111B",
+                    base = "#1E1E2E",
+                    mantle = "#1E1E2E",
+                    crust = "#1E1E2E",
+                    -- crust = "#11111B",
                 },
             },
             highlight_overrides = {
@@ -106,12 +107,10 @@ return {
 
                         ["@storageclass.lifetime"] = { fg = colors.yellow },
 
-                        -- ["@lsp.type.class"] = { fg = colors.yellow },
-                        -- ["@lsp.type.decorator"] = { fg = colors.yellow },
-                        -- ["@lsp.type.enum"] = { fg = colors.yellow },
-                        -- ["@lsp.type.interface"] = { fg = colors.yellow },
-                        -- ["@lsp.type.macro"] = { fg = colors.blue },
-                        -- ["@lsp.type.variable"] = { fg = colors.text },
+                        ["@module"] = { fg = colors.text },
+                        ["@module.go"] = { fg = colors.text },
+                        ["@lsp.type.namespace"] = { fg = colors.text },
+                        ["@lsp.type.namespace.go"] = { fg = colors.text },
                     }
                 end,
             },

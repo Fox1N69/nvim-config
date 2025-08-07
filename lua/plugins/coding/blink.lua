@@ -5,7 +5,7 @@ return {
         "rafamadriz/friendly-snippets",
         ft = "lua",
     },
-    version = "v0.*",
+    version = "v0.13.1",
     opts = {
         appearance = {
             nerd_font_variant = "mono",
@@ -46,7 +46,6 @@ return {
             },
             menu = {
                 border = "rounded",
-                scrollbar = false,
                 draw = {
                     columns = {
                         { "kind_icon" },
